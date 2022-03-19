@@ -41,7 +41,7 @@ class KairosEnrollRequest {
         // Images used for api transactions are stored in the cloud are used strictly for R&D purpose only.
         // To avoid file storage, this must be sent as an HTTP header:
         // store_image: "false"
-        xhr.setRequestHeader('store_image', 'false');
+        xhr.setRequestHeader('store_image', (this.store_images ? 'true' : 'false'));
         
         // Setting the mandatory data for the request
         let request_data = {};

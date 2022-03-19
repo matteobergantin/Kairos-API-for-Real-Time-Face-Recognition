@@ -15,6 +15,7 @@ req.connectionCallback(e => {
             const error = response["Errors"][i];
             bs_alert(`Kairos error ${error["ErrCode"]}: ${error["Message"]}`, 'danger'); 
         }
+        clearCanvas($('#canvas-draw')[0]);
         return;
     }
     // It can only handle one face for now
