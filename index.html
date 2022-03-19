@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF8">
+        <title>KAIROS FACE RECOGNITION</title>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Darkly theme for bootstrap: https://bootswatch.com/darkly/-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Bootstrap library -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <!-- Custom style sheet-->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Script to manage Media Devices (aka Webcam Inputs)-->
+        <script src="scripts/media-devices.js"></script>
+        <!-- Script to manage Kairos-->
+        <script src="scripts/kairos-interface.js"></script>
+        <!-- Dumb script to get a custom error alert to show on the screen-->
+        <script src="scripts/bootstrap-alert-function.js"></script>
+        <!-- Parsing Kairos data and printing it over the video element-->
+        <script src="scripts/canvas-draw.js"></script>
+    </head>
+    <body>
+        <div id="options-wrapper">
+            <div id="media-list-wrapper">
+                <label for="media-list" >Choose webcam: </label>
+                <select id="media-list">
+                </select>
+            </div>
+            <label for="kairos-app-id-input">Kairos App ID: </label>
+            <input type="password" id="kairos-app-id-input" class="input">
+            <label for="kairos-app-key-input">Kairos App Key: </label>
+            <input type="password" id="kairos-app-key-input" class="input">
+            <br>
+            <button id="init-kairos" class="btn btn-primary">Start Recognition</button>
+        </div>
+        <video id="video-output"></video>
+        <canvas id="canvas-draw"></canvas>
+    </body>
+    <!-- Script that makes the page work-->
+    <script src="scripts/main.js"></script>
+</html>

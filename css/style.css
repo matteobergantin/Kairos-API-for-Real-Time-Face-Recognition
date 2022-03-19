@@ -1,0 +1,49 @@
+#video-output {
+    position: relative;
+    max-width: 75%;
+    max-height: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#canvas-draw {
+    display: none;
+}
+
+#options-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+label {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#init-kairos {
+    position: relative;
+    margin-top: 15px;
+    box-shadow: none;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input {
+    box-shadow: none;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+#media-list-wrapper {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: fit-content;
+}
