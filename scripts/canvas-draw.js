@@ -31,6 +31,21 @@ function printText(ctx, msg, x, y) {
     ctx.strokeText(msg, x, y);
 }
 
+function findEthnicity(attr) {
+    // Declare all the possible ethnicities
+    let ethnicities = ["asian", "black", "hispanic", "white"];
+    // Sort them by the attribute value
+    ethnicities.sort(function(a, b) {
+        if (attr[a] == attr[b])
+            return 0;
+        if (attr[a] > attr[b])
+            return -1;
+        return 1;
+    })
+    // Return the first ethnicity, aka the predominant one
+    return ethnicities[0];
+}
+
 function parseKairosResponseAndDrawToScreen(data, video, canv) {
     // We extract the attributes and the transactions from Kairos
     const attr = data['attributes'];
@@ -42,14 +57,8 @@ function parseKairosResponseAndDrawToScreen(data, video, canv) {
     drawFace(ctx, tran['topLeftX'], tran['topLeftY'], tran['width'], tran['height']);
 
     // Extracting data from Kairos
-    let race = "unknown";
-    if (attr['asian'] > attr['black'] && attr['asian'] > attr['white'])
-        race = "asian";
-    else if (attr['black'] > attr['asian'] && attr['black'] > attr['white'])
-        race = "black";
-    else if (attr['white'] > attr['black'] && attr['white'] > attr['asian'])
-        race = "white";
-    printText(ctx, "Race: " + race, XOffset, YOffset);
+    let ethnicity = findEthnicity(attr);
+    printText(ctx, "Ethnicity: " + ethnicity, XOffset, YOffset);
     // O.O kairos assuming genders
     let sex = (attr['gender']['femaleConfidence'] > attr['gender']['maleConfidence'] ? "female" : "male");
     printText(ctx, "Sex: " + sex, XOffset, YOffset*2);
