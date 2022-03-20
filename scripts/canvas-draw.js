@@ -4,7 +4,7 @@ const XOffset = 15;
 // Will just draw a rectangle over the guy's face
 function drawFace(ctx, x, y, w, h) {
     ctx.strokeStyle = "red";
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 2;
     ctx.rect(x, y, w, h);
     ctx.stroke();
 }
